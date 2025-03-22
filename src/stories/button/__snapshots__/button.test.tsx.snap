@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Button > 展示一个button组件 1`] = `
+<body>
+  <div>
+    <button
+      class="storybook-button storybook-button--medium storybook-button--secondary"
+      type="button"
+    >
+      按钮
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button > 展示一个不同大button组件 1`] = `
+<body>
+  <div>
+    <button
+      class="storybook-button storybook-button--medium storybook-button--secondary"
+      type="button"
+    >
+      large
+    </button>
+  </div>
+</body>
+`;

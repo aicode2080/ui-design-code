@@ -1,0 +1,5 @@
+*.d.ts
+vite.config.ts
+*.cjs
+coverage
+dist

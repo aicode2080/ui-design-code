@@ -1,0 +1,6 @@
+.github/
+.vscode/
+lib/
+assets/
+src
+scripts
