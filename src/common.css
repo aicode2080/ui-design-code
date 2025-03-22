@@ -1,0 +1,8 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+/* body {
+  @apply text-framework30 text-content font-default;
+} */
