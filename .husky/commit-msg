@@ -1,4 +1,29 @@
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+# 确保在 Windows 上也能正确执行
+if [ -f "$(dirname "$0")/_/husky.sh" ]; then
+  . "$(dirname "$0")/_/husky.sh"
+fi
 
-npx --no-install commitlint --edit $1 
+# 获取提交信息，处理 Windows 和 Unix 的行尾格式
+commit_msg=$(cat "$1" | tr -d '\r')
+
+# 检查提交信息格式
+if ! echo "$commit_msg" | grep -qE "^(feat|fix|style): .+"; then
+  echo "❌ 提交信息格式错误！"
+  echo ""
+  echo "请使用以下格式提交："
+  echo "  feat: 新功能"
+  echo "  fix: 修复问题"
+  echo "  style: 代码样式修改"
+  echo ""
+  echo "示例："
+  echo "  git commit -m \"feat: 添加用户登录功能\""
+  echo "  git commit -m \"fix: 修复登录页面样式问题\""
+  echo "  git commit -m \"style: 调整代码缩进格式\""
+  exit 1
+fi
+
+# 如果格式正确，则运行 commitlint
+if command -v npx >/dev/null 2>&1; then
+  npx --no-install commitlint --edit "$1"
+fi 
