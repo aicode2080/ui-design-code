@@ -8,9 +8,7 @@ describe('Button', () => {
   });
 
   test('展示一个不同大button组件', () => {
-    const component = render(
-      <Button label="large" />,
-    );
+    const component = render(<Button label="large" />);
     expect(component.baseElement).toMatchSnapshot();
   });
 });

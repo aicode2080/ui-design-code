@@ -1,8 +1,4 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
 
-if [[ "$OSTYPE" =~ ^darwin ]]; then
-  export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-fi
-
-npx --no-install commitlint -e $HUSKY_GIT_PARAMS
+npx --no-install commitlint --edit $1 

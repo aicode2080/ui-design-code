@@ -1,4 +1,4 @@
 declare module './postcss.config.cjs' {
-    const postcss: any;
-    export default postcss;
-  }
+  const postcss: any;
+  export default postcss;
+}
